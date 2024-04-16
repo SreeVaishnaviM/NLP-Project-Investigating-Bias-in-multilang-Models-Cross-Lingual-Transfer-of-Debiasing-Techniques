@@ -41,16 +41,16 @@ Install all the required libraries:
       1) python experiments/sentence_debias_subspace.py --persistent_dir="data/" --model="BertModel" --model_name_or_path="bert-base-multilingual-uncased" --bias_type="gender" --lang_debias="en"
       similarly
   ##  densray: 
-  1) python experiments/densray_subspace.py --persistent_dir="data/" --model="BertModel" --model_name_or_path="bert-base-multilingual-uncased" --bias_type="gender" --lang_debias="en"
+     1) python experiments/densray_subspace.py --persistent_dir="data/" --model="BertModel" --model_name_or_path="bert-base-multilingual-uncased" --bias_type="gender" --lang_debias="en"
   ## inlp:
 
-   1) python experiments/inlp_projection_matrix.py --persistent_dir='/path/to/directory' --model BertModel --model_name_or_path 'bert-base-multilingual-uncased' --bias_type religion --n_classifiers 80 --seed 0 --         lang_debias fr
-   2) python experiments/crows_debias.py --persistent_dir='/path/to/directory' --model INLPBertForMaskedLM --model_name_or_path 'bert-base-multilingual-uncased' --projection_matrix '/path_to_projection_matrix' --         bias_type gender --sample false --seed 0 --lang_eval en --lang_debias fr
+      1) python experiments/inlp_projection_matrix.py --persistent_dir='/path/to/directory' --model BertModel --model_name_or_path 'bert-base-multilingual-uncased' --bias_type religion --n_classifiers 80 --seed 0 --         lang_debias fr
+      2) python experiments/crows_debias.py --persistent_dir='/path/to/directory' --model INLPBertForMaskedLM --model_name_or_path 'bert-base-multilingual-uncased' --projection_matrix '/path_to_projection_matrix' --         bias_type gender --sample false --seed 0 --lang_eval en --lang_debias fr
 
    ## CDA & Dropout:
    
       1) python experiments/run_mlm.py --model_name_or_path "bert-base-multilingual-uncased" --cache_dir "[path]/cache/" --do_train --train_file "data/text/wiki-fr_sample_10.txt" --validation_split_percentage 0 --         max_steps 2000 --per_device_train_batch_size 4 --gradient_accumulation_steps 128 --max_seq_length 512 --save_steps 500 --preprocessing_num_workers 4 --counterfactual_augmentation "race" --persi
-     2)  python experiments/crows_dropout_cda.py --persistent_dir="[path]" --model="dropout_mbert" --model_name_or_path="[path_to_dir]" --bias_type="gender" --sample='false' --seed=0 --lang_eval='en' --           
+      2)  python experiments/crows_dropout_cda.py --persistent_dir="[path]" --model="dropout_mbert" --model_name_or_path="[path_to_dir]" --bias_type="gender" --sample='false' --seed=0 --lang_eval='en' --          
          lang_debias='fr' --seed_model=0
 
 

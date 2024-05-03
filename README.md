@@ -54,6 +54,21 @@ Install all the required libraries:
          lang_debias='fr' --seed_model=0
 
 
+## CheckPoint 2 Changes :
+
+To assess the robustness of a language model in English, Dutch, French, and German, we tried five different approaches for improving it: swapping words randomly, replacing words with similar ones, shuffling sentences, adding noise, and back translating the data.
+
+Random Swap: This type of augmentation randomly replaces words with any words that have not been grossly biased, according to one of the two predefined lists of biased words, to create a greater diversity of augmented samples.
+
+Synonym Replacement: Similar to word swapping done by CDA, replacement of biased words by their synonyms from WordNet or similar resource could render the counterfactual examples more natural.
+The data set can be enriched by jumbling the word order/tokens of the original sentences.
+
+Sentence shuffling: Changing the sequence of words or phrases in a sentence to produce changes while retaining the general idea.
+
+Noise Injection: Injecting noise into the input sentences by deleting and changing some of the words/tokens could potentially increase the robustness of debiasing.
+
+Back Translation: This would allow for more variation in the paraphrased versions to be added to the debiasing data.
+
 
 
 
